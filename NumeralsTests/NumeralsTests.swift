@@ -11,6 +11,10 @@ import XCTest
 
 class NumeralsTests: XCTestCase {
     
+    let testTuples = [1:"I", 2: "II", 3: "III", 4:"IV", 5:"V",
+        6:"VI", 7:"VII", 8:"VIII", 9:"IX", 10:"X", 11: "XI",
+        20: "XX", 27: "XXVII", 29: "XXIX"]
+    
     override func setUp() {
         super.setUp()
     }
@@ -20,29 +24,23 @@ class NumeralsTests: XCTestCase {
     }
     
     func testNegativeError() {
-        if let converted = Numerals.convert(-99) {
-            XCTFail("conversion occured on a negative!")
-        }
+        let converted = Numerals.convert(-1)
+        let expected = ""
+        XCTAssertEqual(converted, expected, "negative conversion was correct")
         
     }
     
     func testZerorReturnsEmpty() {
         let converted = Numerals.convert(0)
         let expected = ""
-        XCTAssertEqual(converted!, expected, "zero conversion was correct")
+        XCTAssertEqual(converted, expected, "zero conversion was correct")
     }
     
-    func testSingleUnit() {
-        let converted = Numerals.convert(1)
-        let expected = "I"
-        XCTAssertEqual(converted!, expected, "unit conversion was correct")
+    func testCases() {
+        for tuple in testTuples {
+            let converted = Numerals.convert(tuple.0)
+            let expected = tuple.1
+            XCTAssertEqual(converted, expected, "conversion was as expected for: \(tuple.0)")
+        }
     }
-    
-    func test4Substitution() {
-        let converted = Numerals.convert(4)
-        let expected = "IV"
-        print(converted)
-        XCTAssertEqual(converted!, expected, "4 substitution conversion was correct")
-    }
-    
 }
