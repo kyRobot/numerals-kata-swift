@@ -13,24 +13,36 @@ class NumeralsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testNegativeError() {
+        if let converted = Numerals.convert(-99) {
+            XCTFail("conversion occured on a negative!")
+        }
+        
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testZerorReturnsEmpty() {
+        let converted = Numerals.convert(0)
+        let expected = ""
+        XCTAssertEqual(converted!, expected, "zero conversion was correct")
+    }
+    
+    func testSingleUnit() {
+        let converted = Numerals.convert(1)
+        let expected = "I"
+        XCTAssertEqual(converted!, expected, "unit conversion was correct")
+    }
+    
+    func test4Substitution() {
+        let converted = Numerals.convert(4)
+        let expected = "IV"
+        print(converted)
+        XCTAssertEqual(converted!, expected, "4 substitution conversion was correct")
     }
     
 }

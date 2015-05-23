@@ -10,6 +10,8 @@
 		09E4FF491B10A54600985544 /* Numerals.h in Headers */ = {isa = PBXBuildFile; fileRef = 09E4FF481B10A54600985544 /* Numerals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09E4FF4F1B10A54600985544 /* Numerals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4FF431B10A54500985544 /* Numerals.framework */; };
 		09E4FF561B10A54600985544 /* NumeralsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4FF551B10A54600985544 /* NumeralsTests.swift */; };
+		09E4FF601B10A5BC00985544 /* Numerals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4FF5F1B10A5BC00985544 /* Numerals.swift */; };
+		09E4FF611B10A5BC00985544 /* Numerals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4FF5F1B10A5BC00985544 /* Numerals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 		09E4FF4E1B10A54600985544 /* NumeralsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumeralsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E4FF541B10A54600985544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09E4FF551B10A54600985544 /* NumeralsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralsTests.swift; sourceTree = "<group>"; };
+		09E4FF5F1B10A5BC00985544 /* Numerals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numerals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 			children = (
 				09E4FF481B10A54600985544 /* Numerals.h */,
 				09E4FF461B10A54600985544 /* Supporting Files */,
+				09E4FF5F1B10A5BC00985544 /* Numerals.swift */,
 			);
 			path = Numerals;
 			sourceTree = "<group>";
@@ -209,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E4FF601B10A5BC00985544 /* Numerals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E4FF611B10A5BC00985544 /* Numerals.swift in Sources */,
 				09E4FF561B10A54600985544 /* NumeralsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +329,7 @@
 		09E4FF5A1B10A54600985544 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +339,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		09E4FF5B1B10A54600985544 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
